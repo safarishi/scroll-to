@@ -1,3 +1,7 @@
+import scrollTo from './core'
+
+console.log(scrollTo, 'scrollto')
+
 const list = (len) => {
   let fragement = ''
   for (let i = 1; i <= len; i++) {
