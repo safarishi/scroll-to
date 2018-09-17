@@ -1,11 +1,11 @@
-const scrollDefaults = {
+const defaults = {
   getScrollTop: () => window.scrollY,
   setScrollTop: y => window.scrollTo(0, y),
 }
 
 export default function scrollTo(options = {}) {
   options = {
-    ...scrollDefaults,
+    ...defaults,
     ...options
   }
   const {} = options
