@@ -1,10 +1,12 @@
 import scrollTo from './core'
 import { raf } from './utils'
 
-const list = (len) => {
+const list = len => {
   let fragement = ''
   for (let i = 1; i <= len; i++) {
-    fragement += `<div class="container-${i}" style="background: ${i % 2 === 0 ? 'cadetblue' : 'antiquewhite'}; padding: 10px 2px;"> --- ${i}</div>`
+    fragement += `<div class="container-${i}" style="background: ${
+      i % 2 === 0 ? 'cadetblue' : 'antiquewhite'
+    }; padding: 10px 2px;"> --- ${i}</div>`
   }
   return fragement
 }
@@ -14,12 +16,17 @@ function main() {
   const len = 150
   root.innerHTML = list(len)
   // 全局滚动
-  document.querySelector('.btn-container .operate').addEventListener('click', () => {
-    // 1 - len
-    const randomNum = Math.floor(Math.random() * len) + 1
-    console.log(randomNum)
-    window.scrollTo(0, getElementOffset(document.querySelector('.container-' + randomNum)).top)
-  })
+  document
+    .querySelector('.btn-container .operate')
+    .addEventListener('click', () => {
+      // 1 - len
+      const randomNum = Math.floor(Math.random() * len) + 1
+      console.log(randomNum)
+      window.scrollTo(
+        0,
+        getElementOffset(document.querySelector('.container-' + randomNum)).top
+      )
+    })
 }
 
 // 主函数入口
@@ -29,7 +36,6 @@ function getElementOffset(el) {
   const rect = el.getBoundingClientRect()
   return {
     top: rect.top + window.pageYOffset,
-    left: rect.left + window.pageXOffset,
+    left: rect.left + window.pageXOffset
   }
 }
-
