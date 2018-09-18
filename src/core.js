@@ -1,6 +1,9 @@
+import { raf } from './utils'
+
 const defaults = {
-  getScrollTop: () => window.scrollY,
-  setScrollTop: y => window.scrollTo(0, y),
+  // default global y scroll
+  getScrollOffset: () => window.scrollY,
+  setScrollOffset: y => window.scrollTo(0, y)
 }
 
 export default function scrollTo(options = {}) {

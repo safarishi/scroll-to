@@ -35,7 +35,18 @@ main()
 function getElementOffset(el) {
   const rect = el.getBoundingClientRect()
   return {
+    // y axis direction
     top: rect.top + window.pageYOffset,
+    // x axis direction
     left: rect.left + window.pageXOffset
   }
 }
+
+/**
+ * demo examples
+ * 全局 y 轴滚动
+ * 全局 x 轴滚动
+ * 局部 y 轴滚动
+ * 局部 x 轴滚动
+ */
+
